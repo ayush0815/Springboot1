@@ -55,3 +55,13 @@ class HelloControllerFirstLastName {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz!";
     }
 }
+
+@RestController
+@RequestMapping("/hello")
+class HelloControllerFirstLastLocalHost {
+
+    @PutMapping("/put/{firstName}")
+    public String updateGreeting(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
+}
